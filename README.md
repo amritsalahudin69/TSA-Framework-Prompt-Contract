@@ -77,6 +77,7 @@ cara menghindari regresi,
 cara menggunakan prompt,
 cara membangun workflow,
 cara menjaga konsistensi antar project.
+
 Komponen TSA
 
 Secara umum TSA terdiri dari sembilan lapisan.
@@ -209,6 +210,7 @@ file system,
 process manager,
 memory manager,
 scheduler.
+
 Apakah TSA Terikat Teknologi?
 
 Tidak.
@@ -331,4 +333,4 @@ Definisi Singkat (Elevator Pitch)
 
 TSA Framework (Technical System Architecture Framework) adalah Engineering Operating System yang mengintegrasikan standar kerja, dokumentasi, knowledge management, workflow, prompt contract, dan tata kelola AI ke dalam satu kerangka kerja yang konsisten sehingga berbagai jenis proyek dapat dikembangkan secara lebih terstruktur, dapat diaudit, mudah dipelihara, dan dapat digunakan kembali tanpa bergantung pada histori percakapan AI.
 
-Kalau saya boleh memberi satu catatan terakhir setelah kita menyusun semua Sprint ini: nilai terbesar TSA bukan pada promptnya, melainkan pada cara berpikir yang dipaksakan kepada AI dan engineer. Prompt hanyalah antarmuka. Yang menjadi aset sebenarnya adalah Operating System yang mengatur bagaimana pengetahuan, keputusan, implementasi, dan evolusi proyek dikelola secara konsisten. Itu yang membuat TSA dapat diterapkan pada hampir semua jenis proyek, bukan hanya satu repository atau satu teknologi tertentu
+Satu catatan terakhir setelah saya menyusun ini: nilai terbesar TSA bukan pada promptnya, melainkan pada cara berpikir yang dipaksakan kepada AI dan engineer. Prompt hanyalah antarmuka. Yang menjadi aset sebenarnya adalah Operating System yang mengatur bagaimana pengetahuan, keputusan, implementasi, dan evolusi proyek dikelola secara konsisten. Itu yang membuat TSA dapat diterapkan pada hampir semua jenis proyek, bukan hanya satu repository atau satu teknologi tertentu
