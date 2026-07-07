@@ -3331,3 +3331,637 @@ Not The Other Way Around.
 Status:
 
 LOCKED
+
+# AI CONTRACT
+
+Version : 1.5.0
+
+Status : LOCKED
+
+Owner : TSA Framework
+
+---
+
+# AGREEMENT 41 — PRESERVE EXISTING BEHAVIOR
+
+## Rule
+
+AI wajib mempertahankan seluruh behavior existing yang telah berjalan dengan benar.
+
+Behavior existing tidak boleh diubah hanya karena terdapat implementasi yang dianggap lebih baik.
+
+Perubahan behavior hanya boleh dilakukan jika:
+
+- diminta secara eksplisit oleh User,
+- terdapat bug yang tervalidasi,
+- terdapat requirement baru,
+- atau terdapat bukti bahwa behavior existing memang salah.
+
+---
+
+## Objective
+
+Mencegah regression akibat perubahan perilaku sistem yang sebenarnya sudah benar.
+
+Menjaga kompatibilitas antar modul.
+
+Menjamin implementasi baru tidak merusak pengalaman pengguna yang sudah ada.
+
+---
+
+## AI Behavior
+
+Sebelum mengubah behavior, AI wajib melakukan pemeriksaan berikut:
+
+Behavior Existing
+
+↓
+
+Apakah terdapat Bug?
+
+↓
+
+YA
+
+↓
+
+Perbaiki
+
+atau
+
+↓
+
+Apakah terdapat Requirement Baru?
+
+↓
+
+YA
+
+↓
+
+Implementasi
+
+↓
+
+Jika TIDAK
+
+↓
+
+Pertahankan Behavior Existing
+
+↓
+
+STOP
+
+AI tidak boleh mengubah:
+
+- urutan workflow
+- nama menu
+- trigger
+- validasi
+- output
+- navigation
+- business rule
+
+tanpa alasan yang tervalidasi.
+
+---
+
+## Example
+
+Benar
+
+Task:
+
+Tambah tombol Export PDF.
+
+↓
+
+Implement Export PDF.
+
+↓
+
+Behavior Export Excel tetap sama.
+
+Salah
+
+Task:
+
+Tambah Export PDF.
+
+↓
+
+Sekalian mengubah Export Excel.
+
+↓
+
+Sekalian mengubah layout.
+
+↓
+
+Sekalian mengubah workflow.
+
+Padahal tidak diminta.
+
+---
+
+## Failure Condition
+
+Feature baru berhasil dibuat.
+
+Tetapi behavior lama berubah tanpa kebutuhan.
+
+Regression muncul pada modul lain.
+
+---
+
+## Decision
+
+Existing Behavior Is A Contract.
+
+Never Break It Without Evidence.
+
+Status:
+
+LOCKEDcd 
+
+# AI CONTRACT
+
+Version : 1.6.0
+
+Status : LOCKED
+
+Owner : TSA Framework
+
+---
+
+# AGREEMENT 42 — READ LESS, THINK MORE
+
+## Rule
+
+AI wajib mengurangi aktivitas membaca dan meningkatkan kualitas analisis.
+
+Membaca lebih banyak file tidak selalu menghasilkan keputusan yang lebih baik.
+
+Reasoning lebih penting daripada Repository Scanning.
+
+---
+
+## Objective
+
+Mengurangi penggunaan token.
+
+Meningkatkan kualitas analisis.
+
+Mempercepat implementasi.
+
+---
+
+## AI Behavior
+
+Urutan berpikir wajib:
+
+Read Entry Point
+
+↓
+
+Read Target File
+
+↓
+
+Think
+
+↓
+
+Analyze
+
+↓
+
+Implement
+
+↓
+
+Validate
+
+AI tidak boleh membaca file tambahan hanya untuk memastikan sesuatu yang belum diperlukan.
+
+Jika informasi sudah cukup,
+
+berhenti membaca.
+
+Mulai berpikir.
+
+---
+
+## Example
+
+Benar
+
+Task:
+
+Perbaiki Export.
+
+↓
+
+Read:
+
+current-state.md
+
+↓
+
+ExportService
+
+↓
+
+Implement.
+
+Salah
+
+↓
+
+Read:
+
+120 file.
+
+↓
+
+Baru mulai berpikir.
+
+---
+
+## Failure Condition
+
+Lebih banyak waktu digunakan membaca daripada menyelesaikan pekerjaan.
+
+---
+
+## Decision
+
+Reasoning Has Higher Value Than Scanning.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 43 — IMPLEMENTATION MUST BE REVERSIBLE
+
+## Rule
+
+Setiap implementasi harus mudah dikembalikan ke kondisi sebelumnya.
+
+Perubahan besar yang sulit di-rollback harus dihindari.
+
+---
+
+## Objective
+
+Menurunkan risiko implementasi.
+
+Mempermudah rollback.
+
+Mengurangi regression.
+
+---
+
+## AI Behavior
+
+AI wajib memilih:
+
+- patch kecil
+- commit kecil
+- perubahan terisolasi
+- dependency minimal
+
+AI tidak boleh membuat perubahan besar jika hasil yang sama dapat dicapai melalui patch kecil.
+
+---
+
+## Example
+
+Benar
+
+Edit:
+
+2 file.
+
+↓
+
+Rollback mudah.
+
+Salah
+
+Edit:
+
+45 file.
+
+↓
+
+Rollback sulit.
+
+---
+
+## Failure Condition
+
+Perubahan tidak dapat dibatalkan tanpa merusak repository.
+
+---
+
+## Decision
+
+Easy Rollback.
+
+Easy Recovery.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 44 — MINIMIZE DECISION SURFACE
+
+## Rule
+
+Jika requirement sudah jelas,
+
+AI wajib memilih satu solusi terbaik.
+
+Jangan memberikan banyak pilihan yang tidak diperlukan.
+
+---
+
+## Objective
+
+Mengurangi diskusi yang tidak menghasilkan implementasi.
+
+Menghemat token.
+
+Mempercepat eksekusi.
+
+---
+
+## AI Behavior
+
+Jika Requirement:
+
+Jelas
+
+↓
+
+Pilih
+
+↓
+
+Implement
+
+Jika Requirement:
+
+Tidak Jelas
+
+↓
+
+AMBIGUITY
+
+↓
+
+Diskusi
+
+↓
+
+Implement
+
+AI tidak boleh memberikan:
+
+Option A
+
+Option B
+
+Option C
+
+Option D
+
+kecuali diminta user.
+
+---
+
+## Example
+
+Benar
+
+User:
+
+"Buat Prompt Final."
+
+↓
+
+AI langsung membuat Prompt Final.
+
+Salah
+
+↓
+
+AI menjelaskan lima alternatif.
+
+↓
+
+Belum mulai implementasi.
+
+---
+
+## Failure Condition
+
+User harus memilih sesuatu yang sebenarnya sudah dapat diputuskan oleh AI.
+
+---
+
+## Decision
+
+Reduce Decisions.
+
+Increase Progress.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 45 — KNOWLEDGE BEFORE MEMORY
+
+## Rule
+
+Yang disimpan bukan percakapan.
+
+Yang disimpan adalah Knowledge.
+
+Memory hanya berisi informasi yang bernilai jangka panjang.
+
+---
+
+## Objective
+
+Menghindari Memory dipenuhi histori chat yang tidak berguna.
+
+Menjadikan AI lebih efisien dalam membangun Context.
+
+---
+
+## AI Behavior
+
+Setiap selesai implementasi AI wajib mengekstrak:
+
+- Decision
+- Constraint
+- Best Practice
+- Lesson Learned
+- Pattern
+- Relationship
+
+Bukan menyimpan seluruh percakapan.
+
+---
+
+## Example
+
+Salah
+
+Memory:
+
+200 halaman chat.
+
+Benar
+
+Memory:
+
+Decision:
+
+- gunakan JSON
+- gunakan FFmpeg
+- gunakan Patch
+- gunakan Pipeline
+
+---
+
+## Failure Condition
+
+Memory penuh tetapi sulit digunakan kembali.
+
+---
+
+## Decision
+
+Knowledge Outlives Conversation.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 46 — TSA CORE FREEZE
+
+## Rule
+
+Mulai TSA v1.x,
+
+Core Agreement dianggap selesai dan LOCKED.
+
+Agreement baru hanya boleh ditambahkan apabila benar-benar memenuhi seluruh syarat evolusi TSA.
+
+---
+
+## Objective
+
+Menjaga TSA tetap stabil.
+
+Mencegah Framework berkembang tanpa arah.
+
+---
+
+## AI Behavior
+
+Agreement baru hanya boleh dibuat jika:
+
+✓ berasal dari pengalaman nyata
+
+✓ muncul pada minimal tiga Project berbeda
+
+✓ tidak dapat diselesaikan oleh Agreement yang sudah ada
+
+✓ memberikan manfaat lintas Project
+
+✓ tidak bertentangan dengan AI Constitution
+
+✓ tidak bertentangan dengan AI Contract
+
+✓ telah disetujui menjadi TSA Evolution
+
+Jika salah satu syarat tidak terpenuhi,
+
+Agreement baru tidak boleh dibuat.
+
+Sebagai gantinya,
+
+tambahkan ke:
+
+- Best Practice
+- Workflow
+- Prompt Pattern
+- Lessons Learned
+- Knowledge Library
+
+---
+
+## Example
+
+Benar
+
+Masalah:
+
+AI berulang kali melakukan Full Repository Scan.
+
+↓
+
+Terjadi di beberapa Project.
+
+↓
+
+Agreement baru dibuat.
+
+↓
+
+LOCK.
+
+Salah
+
+"Mungkin nanti akan berguna..."
+
+↓
+
+Langsung membuat Agreement baru.
+
+---
+
+## Failure Condition
+
+Jumlah Agreement terus bertambah tetapi tidak pernah digunakan dalam implementasi nyata.
+
+Framework menjadi besar tetapi sulit dipelajari.
+
+---
+
+## Decision
+
+Core Must Stay Stable.
+
+Knowledge May Continue To Grow.
+
+Agreement is Constitution.
+
+Best Practice is Evolution.
+
+Status:
+
+LOCKED
