@@ -2330,3 +2330,404 @@ Core tetap stabil.
 Status:
 
 LOCKED
+# AI CONTRACT
+
+Version : 1.2.0
+
+Status : LOCKED
+
+Owner : TSA Framework
+
+---
+
+# AGREEMENT 30 — IMPLEMENT, DON'T SPECULATE
+
+## Rule
+
+AI wajib mengimplementasikan berdasarkan fakta yang tersedia.
+
+AI dilarang berspekulasi mengenai kebutuhan masa depan yang belum diminta.
+
+---
+
+## Objective
+
+Menghindari over-engineering dan fitur yang tidak pernah digunakan.
+
+---
+
+## AI Behavior
+
+Selalu kerjakan:
+
+Current Requirement
+
+↓
+
+Current Milestone
+
+↓
+
+Current Validation
+
+Jangan membuat:
+
+- future abstraction
+- generic engine
+- extension point
+- plugin system
+- configuration berlebihan
+
+kecuali diminta secara eksplisit.
+
+---
+
+## Example
+
+Benar
+
+User meminta:
+
+Export Excel.
+
+↓
+
+Bangun Export Excel.
+
+Salah
+
+↓
+
+Sekalian membuat Export Engine Universal.
+
+↓
+
+Sekalian PDF.
+
+↓
+
+Sekalian CSV.
+
+↓
+
+Sekalian Plugin.
+
+---
+
+## Failure Condition
+
+Lebih banyak waktu dipakai membangun kemungkinan masa depan dibanding menyelesaikan kebutuhan saat ini.
+
+---
+
+## Decision
+
+Current Requirement Always Wins.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 31 — EVERY FILE MUST HAVE A PURPOSE
+
+## Rule
+
+Setiap file yang dibuat wajib memiliki tanggung jawab yang jelas.
+
+Tidak boleh ada file yang dibuat "untuk berjaga-jaga".
+
+---
+
+## Objective
+
+Menjaga repository tetap ramping, mudah dipahami, dan mudah dipelihara.
+
+---
+
+## AI Behavior
+
+Sebelum membuat file baru AI wajib bertanya:
+
+- Mengapa file ini diperlukan?
+- Apa tanggung jawabnya?
+- Apakah fungsi ini sudah ada di file lain?
+
+Jika belum memiliki alasan kuat,
+
+jangan buat file baru.
+
+---
+
+## Example
+
+Benar
+
+Tambah:
+
+ExcelExporter
+
+karena belum ada.
+
+Salah
+
+Tambah:
+
+ExcelHelper
+
+ExcelUtils
+
+ExcelManager
+
+ExcelFactory
+
+padahal semuanya hanya dipakai sekali.
+
+---
+
+## Failure Condition
+
+Repository dipenuhi file kecil yang saling tumpang tindih.
+
+---
+
+## Decision
+
+One File.
+
+One Responsibility.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 32 — VALIDATION BEFORE COMPLETION
+
+## Rule
+
+AI tidak boleh menyatakan pekerjaan selesai sebelum melakukan validasi sesuai ruang lingkup task.
+
+---
+
+## Objective
+
+Memastikan implementasi benar-benar memenuhi Objective.
+
+---
+
+## AI Behavior
+
+Minimal lakukan:
+
+- validasi flow
+- validasi requirement
+- validasi dependency yang diubah
+- validasi output
+
+Jika validasi belum dilakukan,
+
+AI wajib menyatakan:
+
+"Belum tervalidasi."
+
+---
+
+## Example
+
+Benar
+
+Implement
+
+↓
+
+Validate
+
+↓
+
+Finish
+
+Salah
+
+Implement
+
+↓
+
+Finish
+
+---
+
+## Failure Condition
+
+Feature dinyatakan selesai tetapi gagal pada pengujian pertama.
+
+---
+
+## Decision
+
+No Validation.
+
+No Completion.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 33 — UPDATE KNOWLEDGE IMMEDIATELY
+
+## Rule
+
+Jika implementasi menghasilkan perubahan penting terhadap Project, Knowledge Project wajib diperbarui pada sesi yang sama.
+
+---
+
+## Objective
+
+Menjaga agar dokumentasi selalu mencerminkan kondisi Project terbaru.
+
+---
+
+## AI Behavior
+
+Jika terjadi:
+
+- perubahan workflow
+- perubahan architecture
+- perubahan decision
+- perubahan milestone
+- perubahan pipeline
+
+↓
+
+Update dokumentasi terkait sebelum menutup task.
+
+---
+
+## Example
+
+Benar
+
+Implement
+
+↓
+
+Update Current State
+
+↓
+
+Update Timeline
+
+↓
+
+Finish
+
+Salah
+
+Implement
+
+↓
+
+"Nanti dokumentasinya belakangan."
+
+---
+
+## Failure Condition
+
+Source Code dan dokumentasi tidak lagi sinkron.
+
+---
+
+## Decision
+
+Knowledge must evolve with the Project.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 34 — REPOSITORY IS A LIVING SYSTEM
+
+## Rule
+
+Repository diperlakukan sebagai sistem yang terus berkembang, bukan kumpulan file.
+
+Setiap perubahan harus mempertimbangkan dampaknya terhadap keseluruhan repository.
+
+---
+
+## Objective
+
+Menjaga repository tetap sehat, konsisten, dan mudah dikembangkan dalam jangka panjang.
+
+---
+
+## AI Behavior
+
+Sebelum implementasi AI wajib mempertimbangkan:
+
+- dependency
+- consistency
+- documentation
+- maintainability
+- backward compatibility
+- impact terhadap module lain
+
+Perubahan harus meningkatkan kualitas repository, bukan hanya menyelesaikan task.
+
+---
+
+## Example
+
+Benar
+
+Tambah feature.
+
+↓
+
+Pastikan struktur tetap konsisten.
+
+↓
+
+Dokumentasi diperbarui.
+
+↓
+
+Repository tetap sehat.
+
+Salah
+
+Tambah feature.
+
+↓
+
+Struktur folder berantakan.
+
+↓
+
+Naming tidak konsisten.
+
+↓
+
+Tidak ada dokumentasi.
+
+---
+
+## Failure Condition
+
+Repository dapat berjalan, tetapi kualitas engineering terus menurun setiap iterasi.
+
+---
+
+## Decision
+
+A Healthy Repository Is More Valuable Than A Fast Repository.
+
+Status:
+
+LOCKED
