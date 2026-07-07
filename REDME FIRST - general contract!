@@ -86,6 +86,7 @@ tidak mengubah scope
 tidak melakukan redesign
 tidak melakukan audit
 berhenti sesuai Stop Condition
+
 8. Prompt Standard
 
 Setiap prompt untuk agent harus memuat:
