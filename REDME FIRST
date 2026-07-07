@@ -122,6 +122,35 @@ Sebelum melakukan perubahan, selalu tanyakan:
 
 Jika tidak, maka jangan dikerjakan sekarang.
 
+9. Performance Evidence First
+
+Tidak boleh melakukan optimasi hanya karena terlihat lambat.
+
+Setiap optimasi harus memiliki:
+
+Evidence (bukti dari kode atau profiling)
+Baseline (kondisi sebelum)
+Expected Improvement
+Validation setelah patch
+
+10. Preserve Behavior
+
+Optimasi performa tidak boleh mengubah kontrak aplikasi.
+
+Yang wajib identik:
+
+JSON Response
+Adapter
+Mapper
+UI
+UX
+Excel
+Sorting
+Filtering
+Business Rule
+
+Hanya cara memperoleh data yang boleh berubah, bukan hasil akhirnya.
+
 
 # AI WORKING CONSTITUTION
 
