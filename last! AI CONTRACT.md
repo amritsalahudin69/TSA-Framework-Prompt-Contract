@@ -2731,3 +2731,292 @@ A Healthy Repository Is More Valuable Than A Fast Repository.
 Status:
 
 LOCKED
+
+# AI CONTRACT
+
+Version : 1.3.0
+
+Status : LOCKED
+
+Owner : TSA Framework
+
+---
+
+# AGREEMENT 35 — REPOSITORY HEALTH OVER FEATURE COUNT
+
+## Rule
+
+Keberhasilan Project tidak diukur dari jumlah fitur.
+
+Keberhasilan Project diukur dari kesehatan repository.
+
+Repository yang sehat akan menghasilkan fitur lebih cepat di masa depan.
+
+---
+
+## Objective
+
+Menjaga Project tetap stabil selama bertahun-tahun, bukan hanya menyelesaikan sprint saat ini.
+
+---
+
+## AI Behavior
+
+Setiap implementasi wajib mempertimbangkan:
+
+- consistency
+- readability
+- maintainability
+- documentation
+- dependency
+- regression risk
+
+AI tidak boleh mengejar jumlah fitur dengan mengorbankan kualitas repository.
+
+---
+
+## Example
+
+Benar
+
+Tambah Feature
+
+↓
+
+Validasi
+
+↓
+
+Update Documentation
+
+↓
+
+Repository tetap konsisten
+
+↓
+
+Finish
+
+Salah
+
+Tambah 10 Feature
+
+↓
+
+Tidak ada dokumentasi
+
+↓
+
+Naming berantakan
+
+↓
+
+Dependency tidak jelas
+
+↓
+
+Technical debt meningkat
+
+---
+
+## Failure Condition
+
+Repository memiliki banyak fitur tetapi sulit dipelihara.
+
+---
+
+## Decision
+
+Healthy Repository Wins.
+
+Feature Count Does Not.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 36 — CONTINUOUS IMPROVEMENT, NOT CONTINUOUS REWRITE
+
+## Rule
+
+Project harus terus membaik.
+
+Tetapi perbaikan dilakukan melalui iterasi kecil yang tervalidasi, bukan rewrite besar.
+
+---
+
+## Objective
+
+Mengurangi risiko kehilangan stabilitas akibat perubahan drastis.
+
+---
+
+## AI Behavior
+
+Setiap improvement wajib mengikuti urutan:
+
+Observe
+
+↓
+
+Analyze
+
+↓
+
+Improve
+
+↓
+
+Validate
+
+↓
+
+Stabilize
+
+↓
+
+Document
+
+↓
+
+Finish
+
+AI dilarang melakukan rewrite besar hanya karena menemukan cara yang "lebih bagus".
+
+Rewrite hanya boleh dilakukan jika:
+
+- sistem sudah tidak dapat dipelihara,
+- terdapat bukti teknis yang kuat,
+- atau mendapat persetujuan eksplisit dari user.
+
+---
+
+## Example
+
+Benar
+
+Tambah validasi.
+
+↓
+
+Optimasi kecil.
+
+↓
+
+Release.
+
+Salah
+
+Rewrite seluruh module karena ada framework baru.
+
+---
+
+## Failure Condition
+
+Repository terus berubah tetapi tidak pernah mencapai kondisi stabil.
+
+---
+
+## Decision
+
+Continuous Improvement.
+
+Not Continuous Rewrite.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 37 — TSA EVOLUTION MUST BE EXPERIENCE-DRIVEN
+
+## Rule
+
+Seluruh evolusi TSA harus berasal dari pengalaman nyata dalam Project.
+
+Bukan dari teori.
+
+Bukan dari tren.
+
+Bukan dari opini.
+
+---
+
+## Objective
+
+Menjadikan TSA sebagai Engineering Operating System yang berkembang berdasarkan evidence dan implementasi nyata.
+
+---
+
+## AI Behavior
+
+Agreement baru hanya boleh dibuat apabila:
+
+✓ berasal dari masalah nyata yang terjadi berulang
+
+✓ tidak dapat diselesaikan oleh Agreement yang sudah ada
+
+✓ memberikan manfaat lintas Project
+
+✓ telah tervalidasi melalui implementasi
+
+✓ tidak bertentangan dengan AI Constitution
+
+✓ tidak bertentangan dengan Agreement sebelumnya
+
+Jika salah satu syarat tidak terpenuhi,
+
+Agreement baru tidak boleh dibuat.
+
+---
+
+## Example
+
+Benar
+
+Masalah:
+
+AI berulang kali melakukan Full Repository Scan.
+
+↓
+
+Terjadi pada beberapa Project.
+
+↓
+
+Dibuat Agreement baru.
+
+↓
+
+LOCK.
+
+Salah
+
+"Mungkin suatu hari nanti kita butuh..."
+
+↓
+
+Langsung membuat Agreement baru.
+
+---
+
+## Failure Condition
+
+Jumlah Agreement terus bertambah tetapi tidak pernah digunakan dalam implementasi nyata.
+
+---
+
+## Decision
+
+Experience Creates Standards.
+
+Standards Guide Experience.
+
+TSA berkembang melalui implementasi, bukan spekulasi.
+
+Status:
+
+LOCKED
