@@ -3965,3 +3965,439 @@ Best Practice is Evolution.
 Status:
 
 LOCKED
+
+# AI CONTRACT
+
+Version : 1.7.0
+
+Status : LOCKED
+
+Owner : TSA Framework
+
+---
+
+# AGREEMENT 47 — SINGLE SOURCE OF KNOWLEDGE
+
+## Rule
+
+Setiap jenis informasi hanya boleh memiliki satu sumber resmi (Single Source of Truth).
+
+AI dilarang menduplikasi informasi yang sama ke banyak dokumen tanpa alasan yang jelas.
+
+---
+
+## Objective
+
+Menjaga konsistensi informasi.
+
+Menghindari konflik dokumentasi.
+
+Mengurangi maintenance yang tidak perlu.
+
+---
+
+## AI Behavior
+
+AI wajib menentukan lokasi resmi untuk setiap jenis informasi.
+
+Contoh:
+
+Architecture
+
+↓
+
+architecture.md
+
+Roadmap
+
+↓
+
+roadmap.md
+
+Current State
+
+↓
+
+current-state.md
+
+Timeline
+
+↓
+
+timeline.md
+
+Decision
+
+↓
+
+decision-log.md
+
+Bug History
+
+↓
+
+bug-history.md
+
+Prompt Library
+
+↓
+
+prompt-library.md
+
+Dokumen lain hanya boleh memberikan referensi (reference), bukan menyalin ulang isi.
+
+---
+
+## Example
+
+Benar
+
+Current State hanya berada pada:
+
+docs/pipeline/current-state.md
+
+README hanya memberikan tautan atau referensi.
+
+Salah
+
+README
+
+↓
+
+Current State
+
+Timeline
+
+Architecture
+
+Roadmap
+
+semuanya disalin ulang.
+
+---
+
+## Failure Condition
+
+Satu informasi memiliki beberapa versi yang berbeda.
+
+Engineer tidak mengetahui mana yang benar.
+
+---
+
+## Decision
+
+One Information.
+
+One Official Location.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 48 — SINGLE RESPONSIBILITY DOCUMENT
+
+## Rule
+
+Setiap dokumen hanya memiliki satu tujuan utama.
+
+Satu dokumen tidak boleh merangkap banyak fungsi.
+
+---
+
+## Objective
+
+Membuat dokumentasi mudah dipahami, dicari, dan dipelihara.
+
+---
+
+## AI Behavior
+
+Contoh tanggung jawab:
+
+README.md
+
+↓
+
+Project Introduction
+
+roadmap.md
+
+↓
+
+Roadmap
+
+architecture.md
+
+↓
+
+Architecture
+
+decision-log.md
+
+↓
+
+Decision
+
+bug-history.md
+
+↓
+
+Bug History
+
+timeline.md
+
+↓
+
+Timeline
+
+current-state.md
+
+↓
+
+Current Project State
+
+Jangan mencampur seluruh informasi ke satu file.
+
+---
+
+## Example
+
+Benar
+
+roadmap.md
+
+↓
+
+Hanya Roadmap.
+
+Salah
+
+roadmap.md
+
+↓
+
+Roadmap
+
+↓
+
+Architecture
+
+↓
+
+Bug
+
+↓
+
+Timeline
+
+↓
+
+Decision
+
+---
+
+## Failure Condition
+
+Dokumentasi menjadi panjang, sulit dicari, dan saling tumpang tindih.
+
+---
+
+## Decision
+
+One Document.
+
+One Responsibility.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 49 — PROJECT BEFORE PERSONAL PREFERENCE
+
+## Rule
+
+Keputusan engineering harus mengikuti kebutuhan Project.
+
+Bukan preferensi pribadi AI maupun engineer.
+
+---
+
+## Objective
+
+Menjaga konsistensi implementasi.
+
+Menghindari perubahan hanya karena selera teknis.
+
+---
+
+## AI Behavior
+
+Jika menemukan pattern existing yang masih valid:
+
+↓
+
+Ikuti.
+
+Jangan mengganti karena:
+
+- framework favorit
+- style favorit
+- naming favorit
+- pola favorit
+- library favorit
+
+Perubahan hanya boleh dilakukan jika:
+
+- terdapat bug
+- requirement baru
+- keputusan resmi Project
+- bukti teknis yang kuat
+
+---
+
+## Example
+
+Benar
+
+Repository menggunakan Pattern A.
+
+↓
+
+AI mengikuti Pattern A.
+
+Salah
+
+Repository menggunakan Pattern A.
+
+↓
+
+AI mengganti menjadi Pattern B.
+
+↓
+
+Alasan:
+
+"Saya lebih suka."
+
+---
+
+## Failure Condition
+
+Repository kehilangan konsistensi karena preferensi individu.
+
+---
+
+## Decision
+
+Project Standard Always Wins.
+
+Personal Preference Never Leads.
+
+Status:
+
+LOCKED
+
+---
+
+# AGREEMENT 50 — LONG-TERM MAINTAINABILITY
+
+## Rule
+
+Setiap keputusan engineering harus mempertimbangkan kemudahan pemeliharaan jangka panjang.
+
+AI tidak boleh hanya mengejar penyelesaian jangka pendek.
+
+---
+
+## Objective
+
+Membangun Project yang tetap mudah dipahami, dikembangkan, dan dipelihara dalam jangka panjang.
+
+---
+
+## AI Behavior
+
+Sebelum implementasi AI wajib bertanya:
+
+Apakah keputusan ini masih mudah dipahami:
+
+- enam bulan lagi?
+- satu tahun lagi?
+- dua tahun lagi?
+
+Jika jawabannya tidak,
+
+pilih solusi yang lebih sederhana dan lebih stabil.
+
+Pertimbangkan:
+
+- readability
+- maintainability
+- documentation
+- consistency
+- extensibility
+- onboarding engineer baru
+
+---
+
+## Example
+
+Benar
+
+Tambah Feature.
+
+↓
+
+Tetap mengikuti struktur existing.
+
+↓
+
+Dokumentasi diperbarui.
+
+↓
+
+Repository tetap mudah dipahami.
+
+Salah
+
+Feature selesai.
+
+↓
+
+Logic tersebar.
+
+↓
+
+Naming tidak konsisten.
+
+↓
+
+Tidak ada dokumentasi.
+
+↓
+
+Sulit dipelihara.
+
+---
+
+## Failure Condition
+
+Repository hanya dapat dipahami oleh pembuat awalnya.
+
+Engineer baru membutuhkan waktu lama untuk memahami sistem.
+
+---
+
+## Decision
+
+Maintainability Is The Greatest Investment.
+
+Short-Term Speed Must Never Sacrifice Long-Term Quality.
+
+Status:
+
+LOCKED
