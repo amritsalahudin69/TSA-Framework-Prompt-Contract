@@ -1,3 +1,18 @@
+# TSA Runtime (Sprint 10)
+
+Sprint 10 menambahkan Runtime Layer tanpa mengubah Sprint 1--9.
+
+## Struktur
+
+-   BOOT.md
+-   EXECUTION.md
+-   DEBUG_LOOP.md
+-   KNOWLEDGE_UPDATE.md
+-   SHUTDOWN.md
+
+Sprint 1--9 = Kernel (LOCKED) Sprint 10 = Runtime (Execution Lifecycle)
+
+
 Apa itu TSA Framework / TSA OS?
 
 TSA (Technical System Architecture) Framework, atau yang disebut juga TSA Operating System (TSA OS), adalah sebuah Engineering Operating System untuk mengelola seluruh siklus hidup pengembangan proyek yang melibatkan AI.

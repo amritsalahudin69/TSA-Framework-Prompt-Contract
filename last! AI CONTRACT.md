@@ -4401,3 +4401,303 @@ Short-Term Speed Must Never Sacrifice Long-Term Quality.
 Status:
 
 LOCKED
+
+# DEBUG LOOP CONTRACT
+
+Status : LOCKED
+Owner  : TSA Framework
+
+---
+
+# PURPOSE
+
+Memaksa Agent melakukan debugging secara mandiri setelah testing.
+
+Agent tidak boleh berhenti hanya karena test gagal.
+
+Agent wajib membaca hasil testing, mencatat bug, mengelompokkan bug, memperbaiki bug, lalu menjalankan validasi ulang sampai bug selesai atau mencapai Stop Condition.
+
+---
+
+# RULE
+
+Setelah implementasi, Agent WAJIB menjalankan Debug Loop.
+
+Debug Loop berlaku untuk:
+
+- build error
+- runtime error
+- failed test
+- broken trigger
+- modal tidak jalan
+- data flow salah
+- validation error
+- UI behavior mismatch
+- API response mismatch
+- console error
+- regression yang terdeteksi
+
+---
+
+# DEBUG LOOP FLOW
+
+```text
+Implement
+
+↓
+
+Run Validation / Testing
+
+↓
+
+Collect Error
+
+↓
+
+Write Debug Log
+
+↓
+
+Classify Bug
+
+↓
+
+Find Root Cause
+
+↓
+
+Fix Bug
+
+↓
+
+Run Validation Again
+
+↓
+
+If Still Bug
+
+    Repeat Debug Loop
+
+If Clear
+
+    Update Docs
+
+↓
+
+Final Report
+
+Agent wajib membuat atau memperbarui:
+
+docs/pipeline/debug-log.md
+
+# Debug Log
+
+## Debug Session
+
+Date :
+
+Task :
+
+Module :
+
+---
+
+## Validation Run 1
+
+Command / Check :
+
+Result :
+
+Status :
+
+---
+
+## Bug List
+
+### BUG-001
+
+Title :
+
+Category :
+
+Severity :
+
+Source :
+
+Evidence :
+
+Root Cause :
+
+Fix Plan :
+
+Fix Applied :
+
+Validation Result :
+
+Status :
+
+---
+
+### BUG-002
+
+Title :
+
+Category :
+
+Severity :
+
+Source :
+
+Evidence :
+
+Root Cause :
+
+Fix Plan :
+
+Fix Applied :
+
+Validation Result :
+
+Status :
+
+BUG ACCUMULATION RULE
+
+Agent wajib mengumpulkan seluruh bug yang ditemukan sebelum fixing besar.
+
+Agent tidak boleh memperbaiki satu bug lalu mengabaikan bug lain.
+
+Urutan wajib:
+
+Collect all visible bugs
+
+↓
+
+Group by root cause
+
+↓
+
+Fix highest-impact root cause first
+
+↓
+
+Validate
+
+↓
+
+Continue
+BUG CLASSIFICATION
+
+Setiap bug harus diklasifikasikan:
+
+Build Error
+Runtime Error
+Test Failure
+UI Behavior Bug
+Data Flow Bug
+Validation Bug
+Integration Bug
+Regression
+Documentation Gap
+FIXING PRIORITY
+
+Prioritas fixing:
+
+1. Build Error
+2. Runtime Error
+3. Broken Main Flow
+4. Failed Required Trigger
+5. Data Flow Bug
+6. Validation Bug
+7. UI Behavior Bug
+8. Documentation Gap
+LOOP LIMIT
+
+Agent wajib melakukan debug loop sampai bug selesai.
+
+Namun untuk mencegah infinite loop, batas maksimum:
+
+MAX_DEBUG_LOOP = 5
+
+Jika setelah 5 loop bug belum selesai, Agent wajib berhenti dan menulis:
+
+DEBUG LOOP STOPPED
+
+Reason :
+Remaining Bug :
+Evidence :
+Attempted Fix :
+Recommended Next Action :
+ROOT CAUSE RULE
+
+Agent tidak boleh hanya memperbaiki symptom.
+
+Setiap bug wajib memiliki:
+
+Root Cause
+Fix Applied
+Validation Result
+
+Jika root cause belum jelas, tulis:
+
+ROOT CAUSE UNKNOWN
+NEED MORE EVIDENCE
+VALIDATION AFTER FIX
+
+Setelah setiap fix, Agent wajib menjalankan validasi ulang.
+
+Minimal:
+
+- build / run check
+- affected flow check
+- trigger check
+- regression check pada area yang disentuh
+
+Agent tidak boleh menyatakan selesai sebelum validasi ulang berhasil.
+
+DOCUMENTATION UPDATE
+
+Jika Debug Loop menghasilkan perubahan penting, update:
+
+docs/pipeline/debug-log.md
+docs/pipeline/timeline.md
+docs/pipeline/current-state.md
+docs/critical/audit-gap.md
+FINAL REPORT FORMAT
+
+Agent wajib melaporkan:
+
+DEBUG SUMMARY
+
+1. Validation awal
+2. Bug ditemukan
+3. Root cause
+4. Fix yang dilakukan
+5. Jumlah debug loop
+6. Validation akhir
+7. Bug tersisa
+8. Status final
+SUCCESS CONDITION
+
+Task dianggap selesai jika:
+
+✓ build/check berhasil
+✓ required flow berjalan
+✓ required trigger hidup
+✓ bug utama selesai
+✓ debug-log terupdate
+✓ current-state terupdate
+FAILURE CONDITION
+
+Output dianggap gagal jika Agent:
+
+berhenti setelah test gagal
+tidak membuat debug-log
+tidak mengakumulasi bug
+tidak mencari root cause
+tidak melakukan fix ulang
+tidak validasi ulang
+mengatakan selesai padahal masih ada bug
+menyembunyikan bug tersisa
+tidak update pipeline
+
+LOCK
