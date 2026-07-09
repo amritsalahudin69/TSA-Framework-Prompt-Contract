@@ -1,12 +1,12 @@
 # EXECUTION.md
 
 Status  : LOCKED  
-Version : 1.1.0  
+Version : 1.7.0  
 Purpose : Menjalankan task berdasarkan Runtime Mode  
 
 ---
 
-# EXECUTION FLOW
+# Execution Flow
 
 ```text
 Boot
@@ -30,21 +30,15 @@ Shutdown
 
 ---
 
-# MODE OUTPUT RULE
+# Mode Output Rule
 
-## Mode 0 — Direct
-
-Output:
+## Mode 0
 
 ```text
 Answer only.
 ```
 
----
-
-## Mode 1 — Micro Patch
-
-Output:
+## Mode 1
 
 ```text
 1. Audit singkat
@@ -54,19 +48,7 @@ Output:
 5. Final report
 ```
 
-Docs update:
-
-```text
-timeline only if needed
-current-state only if behavior changed
-debug-log if bug loop happened
-```
-
----
-
-## Mode 2 — Feature Patch
-
-Output:
+## Mode 2
 
 ```text
 1. Audit summary
@@ -78,20 +60,7 @@ Output:
 7. Final report
 ```
 
-Docs update:
-
-```text
-current-state
-timeline
-audit-gap if any
-debug-log if needed
-```
-
----
-
-## Mode 3 — Architecture / Foundation
-
-Output:
+## Mode 3
 
 ```text
 1. Full audit
@@ -104,24 +73,7 @@ Output:
 8. Final report
 ```
 
-Docs update:
-
-```text
-all relevant docs
-decision log
-architecture
-roadmap
-current-state
-timeline
-audit-gap
-debug-log if needed
-```
-
----
-
-## Mode 4 — Review Only
-
-Output:
+## Mode 4
 
 ```text
 1. Gap
@@ -135,7 +87,7 @@ No implementation.
 
 ---
 
-# EXECUTION RULE
+# Rule
 
 - Use smallest possible patch.
 - Do not add future feature.

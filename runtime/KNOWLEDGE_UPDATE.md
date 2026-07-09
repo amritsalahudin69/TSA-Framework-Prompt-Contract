@@ -1,12 +1,12 @@
 # KNOWLEDGE_UPDATE.md
 
 Status  : LOCKED  
-Version : 1.1.0  
+Version : 1.7.0  
 Purpose : Mengatur update knowledge berdasarkan Runtime Mode  
 
 ---
 
-# KNOWLEDGE UPDATE RULE
+# Rule
 
 Update knowledge mengikuti mode.
 
@@ -14,7 +14,7 @@ Jangan update semua dokumen untuk task kecil.
 
 ---
 
-# MODE UPDATE MATRIX
+# Mode Update Matrix
 
 | Mode | Required Update |
 |------|-----------------|
@@ -26,7 +26,7 @@ Jangan update semua dokumen untuk task kecil.
 
 ---
 
-# UPDATE FLOW
+# Update Flow
 
 ```text
 Validation Passed
@@ -42,7 +42,7 @@ Shutdown
 
 ---
 
-# WHAT TO STORE
+# What To Store
 
 Store:
 
@@ -62,11 +62,9 @@ Do not store:
 
 ---
 
-# SINGLE SOURCE RULE
+# Single Source Rule
 
 Setiap informasi hanya disimpan pada dokumen yang tepat.
-
-Contoh:
 
 ```text
 Current state → current-state.md

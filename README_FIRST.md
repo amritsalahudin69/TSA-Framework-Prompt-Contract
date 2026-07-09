@@ -1,18 +1,16 @@
 # README_FIRST.md
 
 Status  : LOCKED  
-Version : 1.1.0  
+Version : 1.7.0  
 Purpose : Entry point sebelum memakai TSA  
 
 ---
 
 # Read This First
 
-TSA adalah Engineering Operating System untuk mengatur cara AI bekerja pada project.
+TSA tidak boleh selalu dijalankan secara penuh.
 
-Namun TSA tidak boleh selalu dijalankan secara penuh.
-
-Untuk menghemat token dan menjaga eksekusi tetap cepat, setiap task wajib memilih Runtime Mode terlebih dahulu.
+Setiap task wajib memilih Runtime Mode terlebih dahulu.
 
 ---
 
@@ -25,14 +23,6 @@ Mode 2 — Feature Patch
 Mode 3 — Architecture / Foundation
 Mode 4 — Review Only
 ```
-
----
-
-# Mode Selection Rule
-
-Gunakan mode paling ringan yang cukup untuk menyelesaikan task.
-
-Jangan memakai Mode 3 jika task cukup diselesaikan dengan Mode 1.
 
 ---
 

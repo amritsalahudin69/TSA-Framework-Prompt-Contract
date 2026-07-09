@@ -1,64 +1,52 @@
-# PATCH MANIFEST
+# PATCH_MANIFEST.md
 
-Patch Name : TSA Runtime Mode Patch  
-Version    : 1.1.0  
-Scope      : Changed files only  
+Patch Name : TSA Runtime Mode + AI Contract v1.7  
+Version    : 1.7.0  
+Scope      : Runtime, Prompt Runtime, AI Contract Governance  
 
 ---
 
-# Replace
+# Replace / Update
 
 ```text
 README.md
+README_FIRST.md
 README for agent.md
-BOOT.md
-EXECUTION.md
-DEBUG_LOOP.md
-KNOWLEDGE_UPDATE.md
-SHUTDOWN.md
-```
-
----
-
-# Rename
-
-```text
-REDME FIRST
-→ README_FIRST.md
-```
-
----
-
-# Move
-
-```text
-expect prompt!.md
-→ examples/expect-prompt-cutting-export.md
-```
-
----
-
-# Keep / Do Not Change
-
-```text
-# Sprint 0 — TSA Architecture.md
-# Sprint 1 — Operating System.md
-# Sprint 2 — Project Standards.md
-# Sprint 3 — Project Foundation.md
-# Sprint 4 — Real Projects.md
-# Sprint 5 — Shared Knowledge.md
-# Sprint 6 — Knowledge Evolution.md
-# Sprint 7 — Automation System.md
-# Sprint 8 — AI Memory System.md
-# Sprint 9 — Governance & Versioning.md
-last! AI CONTRACT.md
+runtime/MODE_SELECTOR.md
+runtime/BOOT.md
+runtime/EXECUTION.md
+runtime/DEBUG_LOOP.md
+runtime/KNOWLEDGE_UPDATE.md
+runtime/SHUTDOWN.md
+prompt/PROMPT_SELECTOR.md
+prompt/MODE_0_DIRECT.md
+prompt/MODE_1_MICRO_PATCH.md
+prompt/MODE_2_FEATURE_PATCH.md
+prompt/MODE_3_FOUNDATION.md
+prompt/MODE_4_REVIEW.md
+kernel/last! AI CONTRACT.md
 ```
 
 ---
 
 # Reason
 
-Menambahkan Runtime Mode agar TSA tidak terlalu berat untuk task kecil.
+- Add Runtime Mode so TSA remains lightweight for small tasks.
+- Add Mode Selector as runtime classifier.
+- Separate human README and agent README.
+- Keep Debug Loop detail only in `runtime/DEBUG_LOOP.md`.
+- AI Contract updated to v1.7.0 to add documentation governance agreements 47–50.
+- Prevent duplicate responsibility in AI Contract and Debug Loop.
+
+---
+
+# Keep / Do Not Change
+
+```text
+Sprint 0–9 documents
+Existing project documentation
+Existing examples unless explicitly moved
+```
 
 ---
 

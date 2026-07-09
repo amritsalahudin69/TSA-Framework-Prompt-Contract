@@ -1,42 +1,51 @@
-# TSA Runtime Mode Patch
+# TSA Framework Prompt Contract
 
 Status  : LOCKED  
-Version : 1.1.0  
-Scope   : Runtime Layer Only  
+Version : 1.7.0  
+Scope   : TSA Kernel + Runtime Mode Patch  
 
 ---
 
 # Purpose
 
-Patch ini hanya mengubah cara Agent mengonsumsi TSA agar tidak terlalu berat untuk task kecil.
+TSA adalah Engineering Operating System untuk mengatur cara AI bekerja pada project.
 
-Core TSA tidak diubah.
-
-Sprint 0–9 tetap LOCKED.
-
-AI Contract tetap LOCKED.
+Patch ini menambahkan Runtime Mode agar TSA tidak terlalu berat untuk task kecil.
 
 ---
 
-# Changed Files
+# Core Principle
+
+Jangan load seluruh TSA untuk semua task.
+
+Gunakan mode paling ringan yang cukup untuk menyelesaikan objective.
+
+---
+
+# Main Layers
 
 ```text
-README.md
-README_FIRST.md
-README for agent.md
-BOOT.md
-EXECUTION.md
-DEBUG_LOOP.md
-KNOWLEDGE_UPDATE.md
-SHUTDOWN.md
-examples/expect-prompt-cutting-export.md
+kernel/
+  AI Contract
+
+runtime/
+  Mode Selector
+  Boot
+  Execution
+  Debug Loop
+  Knowledge Update
+  Shutdown
+
+prompt/
+  Runtime prompt templates
+
+examples/
+  Prompt examples / cookbook
 ```
 
 ---
 
-# Main Change
-
-TSA sekarang memakai Runtime Mode.
+# Runtime Modes
 
 ```text
 Mode 0 — Direct
@@ -46,45 +55,25 @@ Mode 3 — Architecture / Foundation
 Mode 4 — Review Only
 ```
 
-Semakin kecil task, semakin ringan TSA yang dibaca.
-
 ---
 
-# Core Rule
+# Read Order
+
+Untuk human:
 
 ```text
-Do not load all TSA files for every task.
-Load only what the selected Runtime Mode requires.
+README.md
+runtime/MODE_SELECTOR.md
+runtime/BOOT.md
+runtime/EXECUTION.md
+runtime/DEBUG_LOOP.md
 ```
 
----
-
-# Install / Apply
-
-Replace file lama dengan file dalam patch ini.
-
-Rename:
+Untuk agent:
 
 ```text
-REDME FIRST
-```
-
-menjadi:
-
-```text
-README_FIRST.md
-```
-
-Move:
-
-```text
-expect prompt!.md
-```
-
-menjadi:
-
-```text
-examples/expect-prompt-cutting-export.md
+README for agent.md
+runtime/MODE_SELECTOR.md
 ```
 
 ---

@@ -1,12 +1,12 @@
 # SHUTDOWN.md
 
 Status  : LOCKED  
-Version : 1.1.0  
+Version : 1.7.0  
 Purpose : Menutup task dengan final report sesuai Runtime Mode  
 
 ---
 
-# SHUTDOWN FLOW
+# Shutdown Flow
 
 ```text
 Validation Complete
@@ -22,15 +22,13 @@ Stop
 
 ---
 
-# FINAL REPORT BY MODE
+# Final Report By Mode
 
 ## Mode 0
 
 ```text
 Answer complete.
 ```
-
----
 
 ## Mode 1
 
@@ -41,8 +39,6 @@ FINAL REPORT:
 3. Validation
 4. Status
 ```
-
----
 
 ## Mode 2
 
@@ -57,8 +53,6 @@ FINAL REPORT:
 7. Next step
 ```
 
----
-
 ## Mode 3
 
 ```text
@@ -72,8 +66,6 @@ FINAL REPORT:
 7. Roadmap / next milestone
 ```
 
----
-
 ## Mode 4
 
 ```text
@@ -86,7 +78,7 @@ FINAL REPORT:
 
 ---
 
-# STOP RULE
+# Stop Rule
 
 Agent wajib berhenti setelah final report.
 
@@ -99,6 +91,6 @@ Dilarang:
 
 ---
 
-# STATUS
+# Status
 
 WAIT NEXT TASK

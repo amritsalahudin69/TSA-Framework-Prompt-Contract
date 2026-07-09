@@ -1,12 +1,12 @@
 # DEBUG_LOOP.md
 
 Status  : LOCKED  
-Version : 1.1.0  
-Purpose : Memaksa Agent memperbaiki bug setelah validation gagal  
+Version : 1.7.0  
+Purpose : Debug execution source of truth  
 
 ---
 
-# DEBUG LOOP FLOW
+# Debug Loop Flow
 
 ```text
 Validation
@@ -34,7 +34,7 @@ Bug Still Exists?
 
 ---
 
-# MAX LOOP
+# Max Loop
 
 ```text
 MAX_DEBUG_LOOP = 5
@@ -44,7 +44,7 @@ Jika masih gagal setelah 5 loop, stop dan tulis remaining issue.
 
 ---
 
-# DEBUG LOG FILE
+# Debug Log File
 
 Agent wajib membuat/update:
 
@@ -54,7 +54,7 @@ docs/pipeline/debug-log.md
 
 ---
 
-# DEBUG LOG FORMAT
+# Debug Log Format
 
 ```text
 Debug Session:
@@ -71,7 +71,7 @@ Status:
 
 ---
 
-# BUG CLASSIFICATION
+# Bug Classification
 
 ```text
 Build Error
@@ -87,7 +87,7 @@ Documentation Gap
 
 ---
 
-# FIXING PRIORITY
+# Fixing Priority
 
 ```text
 1. Build Error
@@ -102,7 +102,7 @@ Documentation Gap
 
 ---
 
-# RULE
+# Rule
 
 Agent tidak boleh:
 
@@ -114,7 +114,7 @@ Agent tidak boleh:
 
 ---
 
-# STOP CONDITION
+# Stop Condition
 
 Debug loop selesai jika:
 
